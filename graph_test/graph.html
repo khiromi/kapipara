@@ -1,0 +1,96 @@
+<!doctype>
+<link type="text/css" rel="stylesheet" href="./vendor/rickshaw.min.css">
+<script src="./vendor/d3.min.js"></script>
+<script src="./vendor/d3.layout.min.js"></script>
+<script src="./vendor/rickshaw.min.js"></script>
+
+<style>
+#chart_container {
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+}
+#chart {
+        float: left;
+}
+#legend {
+        float: left;
+        margin-left: 15px;
+}
+#offset_form {
+        float: left;
+        margin: 2em 0 0 15px;
+        font-size: 13px;
+}
+#y_axis {
+        float: left;
+        width: 40px;
+}
+</style>
+
+<div id="chart_container">
+        <div id="y_axis"></div>
+        <div id="chart"></div>
+        
+</div>
+
+<script>
+var graph = new Rickshaw.Graph( {
+    element: document.querySelector("#chart"), 
+    renderer: 'line',
+    width: 400, 
+    height: 400, 
+    series: [{
+        color: 'steelblue',
+        data: [ 
+            { x: 0, y: 36.3 }, 
+            { x: 1, y: 36.2 }, 
+            { x: 2, y: 36.25 }, 
+            { x: 3, y: 36.2 }, 
+            { x: 4, y: 36.35 }, 
+            { x: 5, y: 36.15 },
+            { x: 6, y: 36.15 },
+            { x: 7, y: 36.3 },
+            { x: 8, y: 36.35 },
+            { x: 9, y: 36.175 },
+            { x: 10, y: 36.25 },
+            { x: 11, y: 36.2 },
+            { x: 12, y: 36.2 },
+            { x: 13, y: 36.05 },
+            { x: 14, y: 36.375 },
+            { x: 15, y: 36.775 },
+            { x: 16, y: 36.7 },
+            { x: 17, y: 36.875 },
+            { x: 18, y: 36.825 },
+            { x: 19, y: 36.95 },
+            { x: 20, y: 36.85 },
+            { x: 21, y: 36.85 },
+            { x: 22, y: 36.95 },
+            { x: 23, y: 36.85 },
+            { x: 24, y: 36.95 },
+            { x: 25, y: 36.95 },
+            { x: 26, y: 36.825 },
+            { x: 27, y: 36.875 },
+            { x: 28, y: 36.3 },
+            { x: 29, y: 36.2 },
+            { x: 30, y: 36.25 },
+            { x: 31, y: 36.375 }],
+            scale: d3.scale.linear().domain([35.5,40.0]).nice(),
+    }]
+});
+/*
+var y_ticks = new Rickshaw.Graph.Axis.Y( {
+ graph: graph,
+ orientation: 'left',
+ tickFormat: function(y){return y.toPrecision(1)},
+ element: document.getElementById('y_axis'),
+} ); 
+*/
+var yAxis = new Rickshaw.Graph.Axis.Y({
+    graph: graph,
+    element: document.getElementById('y_axis'),
+});
+
+//yAxis.render();
+graph.render();
+
+</script>
