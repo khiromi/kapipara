@@ -1,7 +1,7 @@
 * DB : structure
   table = Users
     UserID : Integer
-    Name : 
+    Name : Strings
   table = ThermoLog
     UserID : Integer
     Date : Date
