@@ -1,0 +1,9 @@
+* DB : structure
+  table = Users
+    UserID : Integer
+    Name : 
+  table = ThermoLog
+    UserID : Integer
+    Date : Date
+    Note : String
+
